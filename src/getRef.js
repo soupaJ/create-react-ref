@@ -1,5 +1,4 @@
-import { FORWARD_REF_KEY } from './forwardRef';
-import RefForwarder from './RefForwarder';
+import { FORWARD_REF } from './symbols';
 import warning from 'fbjs/lib/warning';
 
 export default function getRef(refObject) {
@@ -29,7 +28,8 @@ export default function getRef(refObject) {
   }
 
   // Get polyfilled forwardedRef, if it exists
-  if (ref instanceof RefForwarder) {
+  // if (ref instanceof RefForwarder) {
+  if (ref && ref.forwardRefKey === FORWARD_REF) {
     ref = ref.getRef();
   }
 

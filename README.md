@@ -91,7 +91,7 @@ const buttonRef = createRef();
 
 ### Caveats
 
-The polyfilled `forwardRef` is only compatible with refs created from `createRef` and not compatible with `ref` callbacks/functions. If you attach a ref callback to a component returned from the polyfilled `forwardRef`, you will get a RefForwarder component instance. This is one instance of how this library differs from React's implementation. React actually built an internal type to handle this, which cannot be polyfilled, and returns the actual forwared child. However, this polyfill provides a `getRef` function you can use to make sure the correct ref is always returned (polyfilled or not).
+The polyfilled `forwardRef` is only compatible with refs created from `createRef` and not compatible with `ref` callbacks/functions. If you attach a ref callback to a component returned from the polyfilled `forwardRef`, you will get a RefForwarder component instance. This is one instance of how this library differs from React's implementation. React actually built an internal type to handle this, which cannot be polyfilled, and returns the actual forwarded child. However, this polyfill provides a `getRef` function you can use to make sure the correct ref is always returned (polyfilled or not).
 
 ## Extra APIs not in React
 

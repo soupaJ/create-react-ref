@@ -14,7 +14,6 @@ describe(`create-react-ref (${name})`, () => {
         jest.setMock('react-dom', ReactDOM);
         getRef = require('../getRef');
         createRef = require('../createRef');
-        forwardRef = require('../forwardRef');
       });
 
       it('should do return the ref from the createRef object', () => {
