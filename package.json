@@ -1,0 +1,50 @@
+{
+  "name": "create-react-ref",
+  "version": "0.1.0",
+  "description":
+    "Polyfill for the proposed React.createRef and React.forwardRef API",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "keywords": ["react", "polyfill", "ponyfill", "createRef", "forwardRef"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/soupaJ/create-react-ref.git"
+  },
+  "files": ["lib"],
+  "scripts": {
+    "test": "node ./initTests.js && jest",
+    "flow": "flow",
+    "format": "prettier --write '**/*.{js,md,json,js.flow,d.ts}'",
+    "build": "babel src -d lib --copy-files --ignore __tests__",
+    "prepublish": "npm run build",
+    "commit": "lint-staged"
+  },
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0 || ^16.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.9.1",
+    "prop-types": "^15.6.0",
+    "raf": "^3.4.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "rollup": "^0.57.1"
+  },
+  "lint-staged": {
+    "*.{js,md,json,js.flow,d.ts}": ["prettier --write", "git add"]
+  },
+  "jest": {
+    "silent": true
+  },
+  "dependencies": {
+    "fbjs": "^0.8.16"
+  }
+}

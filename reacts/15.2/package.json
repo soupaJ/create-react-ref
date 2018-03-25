@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "devDependencies": {
+    "react": "^15.2.1",
+    "react-addons-test-utils": "^15.2.1",
+    "react-dom": "^15.2.1"
+  }
+}
