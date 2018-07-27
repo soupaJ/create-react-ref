@@ -6,6 +6,8 @@ React version 16.3 introduces 2 new APIs, `React.createRef` ([React RFC #17](htt
 
 This lib was created to allow using the new ref APIs without an immediate upgrade. Once upgraded to React 16.3, you should be able to remove this lib from your imports and just import React's version. However, this lib also checks for React's version and, if it is installed, it will use it instead of the polyfilled version. This way, you can remove the polyfill when you're ready and not at the same time that you upgrade.
 
+#### This project is not recommended for libraries if you intend to expose the component whose ref is fowarded. The reason is that if your users use a version of React before 16.3, they will receive the internal `RefForwarder` component of this package. This package was created to allow users to use the new API as long as the user is the creator and consumer of the forwarding ref. While there is a method in this lib that will always grab the correct ref `getRef`, it is not a good idea to ask your users to depend on and use this package. If you want to forward refs, you may want to fallback to using an additional prop, for example `inputRef`.
+
 ## How to install
 
 NPM:
